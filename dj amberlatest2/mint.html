@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible"
+        content="IE=edge" />
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet"
+        href="./css/style.css" />
+  <link rel="stylesheet"
+        href="./style.css">
+</head>
+
+<body>
+  <div class="main-container">
+    <div class="inner-container">
+      <div class="logo-area">
+        <div class="logo-img">
+          <img src="./assets/Asset 2.png"
+               alt="" />
+          <img src="./assets/Asset 3.png"
+               alt="" />
+
+
+        </div>
+        <div class="frame-area">
+        
+          <img class="frame desk" src="./assets/Asset 1.png"
+               alt="" />
+          <img class="frame mbl" src="./assets/mobile.png"
+               alt="" />
+          <div id="before"
+               class="c-details ">
+            <p class="title">正式 <br> 發售</p> <br>
+            <p class="desc">關注我們接下來 <br> 的活動和動向！</p>
+              <button id="btn-before"
+                  onclick="changeContent()"
+                  class="c-btn">鏈接錢包</button>
+          </div>
+          <div id="minted"
+               class="c-details-minted minted-hide">
+            <p class="title"><img class="minted-img" src="./assets/1x/Asset 1.png" alt=""><br>
+            <p class="desc">Congratulations! Your artwork has <br> officially been minted as an NFT on <br> the Ethereum blockchain.</p>
+               
+          </div>
+          <div id="mint-area"
+               class="mint-area hide">
+            <img src="./assets/Asset 7.png"
+                 alt="" />
+            <br>
+            <br>
+            <h2 class="mint-title">Mint price 0.1 ETH</h2>
+
+            <h2 class="mint-supply">Total supply 1105</h2>
+            <!-- <div class="counter">
+              <span class="left"
+                    onclick="nextNum()">
+                < </span>
+                  <span>0</span>
+                  <span class="right"
+                        onclick="prevNum()">></span>
+            </div> -->
+
+ <div class="numcontainer">
+            <span class="next" onclick="nextNum()"></span>
+            <span class="prev" onclick="prevNum()"></span>
+            <div id="box"></div>
+          </div>
+
+
+            <button 
+             id="mintBtn"  
+                    onclick="mint"
+                    class="mint-btn">MINT</button>
+            <!-- <button id="connectBtn"
+                    onclick="connectWallet"
+                    class="mint-btn btn-s">CONNECT WALLET</button> -->
+
+            <button id="connectBtn" class="mint-btn btn-s" onclick="connectWallet"><span id="connectContent">connect wallet</span></button>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script src="./js/main.js"></script>
+<script src="lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
+
+<script>
+  let changeContent = () => {
+    let beforeElement = document.getElementById("before");
+    let afterElement = document.getElementById("mint-area");
+    let beforeBtn = document.getElementById("btn-before");
+    beforeElement.classList.toggle("hide");
+    afterElement.classList.remove("hide");
+    beforeBtn.classList.toggle("hide");
+
+  };
+</script>
+<script type="text/javascript">
+  var numbers = document.getElementById("box");
+  for (i = 1; i <= 1105; i++) {
+    var span = document.createElement("span");
+    span.textContent = i;
+    numbers.appendChild(span);
+  }
+  var num = numbers.getElementsByTagName("span");
+  var index = 0 ;
+
+  function nextNum() {
+    num[index].style.display = "none";
+    index = (index + 1) % num.length;
+    num[index].style.display = "initial";
+console.log("numbers", index);
+
+  }
+  function prevNum() {
+   if(numbers.innerText <=1){
+ numbers
+   }else{
+     num[index].style.display = "none";
+    index = (index - 1 + num.length) % num.length;
+    num[index].style.display = "initial";
+   }
+  }
+</script>
+
+
+
+
+</html>
