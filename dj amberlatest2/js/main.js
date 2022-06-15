@@ -75,6 +75,7 @@ async function mint() {
   //   }
   if (index <= 0) {
     alert('Please mint at least 1')
+    console.log(index);
 
     return;
   }
@@ -829,6 +830,7 @@ async function mint() {
   catch (error) {
     // alert(error.code);
     alert("Transaction error , pls ensure your ETH are sufficient");
+    console.log(" value", index);
 
   }
 }
