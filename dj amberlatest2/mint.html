@@ -64,12 +64,19 @@
                         onclick="prevNum()">></span>
             </div> -->
 
- <div class="numcontainer">
+ <!-- <div class="numcontainer">
             <span class="next" onclick="nextNum()"></span>
             <span class="prev" onclick="prevNum()"></span>
             <div id="box"></div>
-          </div>
+          </div> -->
 
+        <div class="container">            
+          <!-- adding button and heading to show the digits -->
+          <!--increment() and decrement() functions on button click-->
+            <button onclick="increment()">+</button>  
+            <h2 id="counting"></h2>
+            <button onclick="decrement()">-</button>         
+        </div>
 
             <button 
              id="mintBtn"  
@@ -102,6 +109,8 @@
     beforeBtn.classList.toggle("hide");
 
   };
+ 
+
 </script>
 <script type="text/javascript">
   var numbers = document.getElementById("box");

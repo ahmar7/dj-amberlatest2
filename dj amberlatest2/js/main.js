@@ -69,10 +69,10 @@ async function connectWallet() {
 }
 
 async function mint() {
-//   if (address == '') {
-//     alert('Please connect to wallet on MATIC network');
-//     return;
-//   }
+  //   if (address == '') {
+  //     alert('Please connect to wallet on MATIC network');
+  //     return;
+  //   }
   if (index <= 0) {
     alert('Please mint at least 1')
 
@@ -806,10 +806,10 @@ async function mint() {
 
   // const MINT_CONTRACT = "0x1Fbea76287a43B10a0C9ED96396DDDb33b6b5B2D";
   //const MINT_CONTRACT = "0x560dA7D8e488670981178863383325295a091981";
-    //const MINT_CONTRACT = "0x2E9C91fd2ab8FC3297F989b3d69B5672003C6DBB"   
-    
+  //const MINT_CONTRACT = "0x2E9C91fd2ab8FC3297F989b3d69B5672003C6DBB"   
+
   const MINT_CONTRACT = "0xCB7Da368E6c62eC383e42D186ef004F9d88646dC"  //amberNFT
-  
+
   let signer = await provider.getSigner();
   // let price = 0.028 * index;
   let price = 0.1 * index;
@@ -833,6 +833,24 @@ async function mint() {
   }
 }
 
+
+
+let index = 1;
+
+document.getElementById("counting").innerText = index;
+
+function increment() {
+  index = index + 1;
+  document.getElementById("counting").innerText = index;
+}
+function decrement() {
+  if (index <= 1) {
+    index = index
+  } else {
+    index = index - 1;
+    document.getElementById("counting").innerText = index;
+  }
+}
 // var acc = document.getElementsByClassName("accordion");
 // var i;
 
